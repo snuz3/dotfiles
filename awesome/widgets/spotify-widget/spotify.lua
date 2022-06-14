@@ -81,7 +81,7 @@ local function worker(user_args)
         set_text = function(self, artist, song)
             local artist_to_display = ellipsize(artist, max_length)
             if self:get_children_by_id('artistw')[1]:get_markup() ~= artist_to_display then
-                self:get_children_by_id('artistw')[1]:set_markup(" " .. artist_to_display .. ": ")
+                self:get_children_by_id('artistw')[1]:set_markup(" " .. artist_to_display .. " - ")
             end
             local title_to_display = ellipsize(song, max_length)
             if self:get_children_by_id('titlew')[1]:get_markup() ~= title_to_display then
