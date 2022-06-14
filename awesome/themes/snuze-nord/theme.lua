@@ -12,6 +12,7 @@ local wibox = require("wibox")
 local dpi   = require("beautiful.xresources").apply_dpi
 local watch = require("awful.widget.watch")
 local spotify_widget = require("widgets.spotify-widget.spotify")
+local logout_menu_widget = require("widgets.logout-menu-widget.logout-menu")
 
 local os = os
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
@@ -157,6 +158,14 @@ local mem = lain.widget.mem({
     settings = function()
         widget:set_markup(markup.font(theme.font_awesome, markup(highlight, "  ") .. markup.font(theme.font, markup(gray, mem_now.used))))
     end
+})
+
+-- Can't create more than one fs widget
+local fs = lain.widget.fs({
+	settings  = function()
+		widget:set_markup(markup.font(theme.font_awesome, markup(highlight, "  ") .. markup.font(theme.font, markup(gray, fs_now["/"].percentage .. "%"))))
+		-- widget:set_markup(markup(gmc.color['teal900'], fs_now["/"].percentage .. "% "))
+	end
 })
 
 -- /home fs
@@ -307,12 +316,19 @@ function theme.at_screen_connect(s)
             spr,
             mem.widget,
             spr,
+			fs.widget,
+			spr,
             net.widget,
             spr,
 			-- theme.weather.widget,
             theme.volume.widget,
             spr,
-            mytextclock
+            mytextclock,
+			logout_menu_widget{
+				-- font = 'Play 14',
+				-- onlock = function() awful.spawn.with_shell('i3lock-fancy') end
+			},
+			spr
         },
     }
 end
