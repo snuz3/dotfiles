@@ -1,6 +1,6 @@
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
-highlight Comment cterm=italic
+
 
 " ========== PLUGINS ==========
 " auto-install vim-plug
@@ -24,15 +24,16 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'scrooloose/NERDTree'
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
-    " Themes
+    " Themes:highlight Comment cterm=italic
     " Plug 'joshdick/onedark.vim'
     Plug 'rafi/awesome-vim-colorschemes'
 	Plug 'arcticicestudio/nord-vim'
 	" Auto completion
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Custom status line
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+	Plug 'itchyny/lightline.vim'
+    " Plug 'vim-airline/vim-airline'
+    " Plug 'vim-airline/vim-airline-themes'
     " CSS Color previews
     Plug 'ap/vim-css-color'
     " File finder
@@ -64,7 +65,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'itchyny/vim-cursorword'
 	" Reveal file in finder (OSX Specific)
 	Plug 'henrik/vim-reveal-in-finder'
-	" Plug 'ryanoasis/vim-devicons'
+	Plug 'ryanoasis/vim-devicons'
 	" Laravel blade
 	Plug 'jwalton512/vim-blade'
 call plug#end()
@@ -268,6 +269,17 @@ let g:airline#extensions#tabline#show_splits = 0       " disables the buffer nam
 let g:airline#extensions#tabline#show_tab_nr = 0       " disable tab numbers                      
 " let g:airline#extensions#tabline#show_tab_type = 0     " disables the weird ornage arrow on the tabline
 
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ 'active': {
+      \   'left': [[ 'paste' ], [ 'readonly', 'filename', 'modified' ]],
+	  \	  'right': [[ 'filetype', 'percent', 'lineinfo' ]]
+	  \ },
+      \ 'component': {
+      \   'helloworld': 'Hello, world!'
+      \ },
+      \ }
+
 " enable tabline
 let g:airline#extensions#tabline#enabled = 1
 
@@ -282,3 +294,5 @@ let NERDTreeWinSize = 60
 let g:rainbow_active = 1
 
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.php,*.vue'
+
+highlight Comment cterm=italic

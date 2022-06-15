@@ -111,5 +111,5 @@ alias vim="nvim"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# neofetch --source ~/.config/neofetch/empty.txt
-python3 ~/.config/vfetch/vfetch.py
+neofetch
+# python3 ~/.config/vfetch/vfetch.py
