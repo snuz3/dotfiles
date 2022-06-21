@@ -27,8 +27,8 @@ theme.fg_normal                                 = "#D8DEE9"
 theme.fg_focus                                  = "#81A1C1"
 theme.fg_urgent                                 = "#CC9393"
 
-theme.bg_normal                                 = "#424B5C"
-theme.bg_focus                                  = "#424B5C"
+theme.bg_normal                                 = "#2E344080"
+theme.bg_focus                                  = "#2E344000"
 theme.bg_urgent                                 = "#424B5C"
 
 theme.border_width                              = dpi(2)
@@ -36,9 +36,11 @@ theme.border_normal                             = "#434c5e"
 theme.border_focus                              = "#81A1C1"
 theme.border_marked                             = "#CC9393"
 
-theme.taglist_fg_focus                          = "#81A1C1"
-theme.tasklist_bg_focus                         = "#424B5C"
--- theme.tasklist_bg_normal                        = "#2E3440"
+-- theme.taglist_fg_focus                          = "#2E344080"
+
+theme.tasklist_bg_focus                         = "#2E344000"
+theme.tasklist_bg_normal                        = "#2E344000"
+
 theme.tasklist_fg_focus                         = "#81A1C1"
 -- theme.taglist_squares_sel                       = theme.dir .. "/icons/square_sel.png"
 -- theme.taglist_squares_unsel                     = theme.dir .. "/icons/square_unsel.png"

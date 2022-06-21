@@ -3,8 +3,8 @@ window:
     columns: 140
     lines: 38
   padding:
-    x: 10
-    y: 10
+    x: 5
+    y: 5
   opacity: 1
   decorations: none
 scrolling:

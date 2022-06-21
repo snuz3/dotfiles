@@ -32,6 +32,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Custom status line
 	Plug 'itchyny/lightline.vim'
+	Plug 'mengelbrecht/lightline-bufferline'
+
     " Plug 'vim-airline/vim-airline'
     " Plug 'vim-airline/vim-airline-themes'
     " CSS Color previews
@@ -274,6 +276,13 @@ let g:lightline = {
       \ 'active': {
       \   'left': [[ 'paste' ], [ 'readonly', 'filename', 'modified' ]],
 	  \	  'right': [[ 'filetype', 'percent', 'lineinfo' ]]
+	  \ },
+	  \ 'tabline': {
+	  \		'left': [ ['buffers'] ],
+	  \		'right': [ ['close'] ]
+	  \ },
+	  \ 'component_expand': {
+	  \		'buffers': 'lightline#bufferline#buffers'
 	  \ },
       \ 'component': {
       \   'helloworld': 'Hello, world!'

@@ -100,7 +100,7 @@ local editor       = os.getenv("EDITOR") or "nvim"
 local browser      = "firefox"
 
 awful.util.terminal = terminal
-awful.util.tagnames = { " www", " dev", " social", " media", " other" }
+awful.util.tagnames = { " web", " dev", " social", " media", " other" }
 awful.layout.layouts = {
     -- awful.layout.suit.floating,
     awful.layout.suit.tile,
@@ -610,7 +610,7 @@ clientkeys = mytable.join(
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, 9 do
+for i = 1, 5 do
     globalkeys = mytable.join(globalkeys,
         -- View tag only.
         awful.key({ modkey }, "#" .. i + 9,
