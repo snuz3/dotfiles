@@ -23,7 +23,7 @@ theme.dir                                       = os.getenv("HOME") .. "/.config
 -- theme.wallpaper                                 = theme.dir .. "/wall.png"
 theme.font                                      = "JetBrains Mono Nerd Font Medium 12"
 theme.font_awesome                              = "Font Awesome 15"
-theme.fg_normal                                 = "#D8DEE9"
+theme.fg_normal                                 = "#AAB2C0"
 theme.fg_focus                                  = "#F06372"
 theme.fg_urgent                                 = "#CC9393"
 
@@ -89,7 +89,7 @@ theme.layout_txt_termfair                       = "[termfair]"
 theme.layout_txt_centerfair                     = "[centerfair]"
 
 local markup = lain.util.markup
-local gray   = "#D8DEE9"
+local gray   = "#AAB2C0"
 local highlight = "#F06372"
 
 -- Textclock
