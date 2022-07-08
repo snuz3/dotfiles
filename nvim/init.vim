@@ -25,7 +25,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     " Themes:highlight Comment cterm=italic
-    " Plug 'joshdick/onedark.vim'
+	Plug 'joshdick/onedark.vim'
     Plug 'rafi/awesome-vim-colorschemes'
 	Plug 'arcticicestudio/nord-vim'
 	" Auto completion
@@ -250,15 +250,22 @@ function! s:show_documentation()
   endif
 endfunction
 
+" highlight Normal ctermbg=none
+" highlight NonText ctermbg=none
 
 " ========== SETTING THEMES =========
-colorscheme nord
-let g:airline_theme='nord'
+" colorscheme nord
+" let g:airline_theme='onedark'
 
 " ========== EASYMOTION COLOR CONFIG =========
-hi EasyMotionTarget ctermbg=none ctermfg=1
-hi EasyMotionShade  ctermbg=none ctermfg=8
-
+" hi EasyMotionTarget ctermbg=none guifg=#000000
+" hi EasyMotionShade  ctermbg=none guifg=#000000
+" hi EasyMotionMoveHL ctermbg=green ctermfg=green
+hi link EasyMotionTarget ErrorMsg
+hi link EasyMotionShade  Comment
+hi link EasyMotionTarget2First MatchParen
+hi link EasyMotionTarget2Second MatchParen
+"
 " ========== AIRLINE SETTINGS =========
 let g:airline#extensions#tabline#enabled = 1           " enable airline tabline                   
 let g:airline#extensions#tabline#show_close_button = 0 " remove 'X' at the end of the tabline     
@@ -272,7 +279,7 @@ let g:airline#extensions#tabline#show_tab_nr = 0       " disable tab numbers
 " let g:airline#extensions#tabline#show_tab_type = 0     " disables the weird ornage arrow on the tabline
 
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+	\ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left': [[ 'paste' ], [ 'readonly', 'filename', 'modified' ]],
 	  \	  'right': [[ 'filetype', 'percent', 'lineinfo' ]]
@@ -305,3 +312,8 @@ let g:rainbow_active = 1
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.php,*.vue'
 
 highlight Comment cterm=italic
+
+let g:onedark_terminal_italics=1
+let g:onedark_hide_endofbuffer=1
+
+source $HOME/.config/nvim/themes/onedark.vim

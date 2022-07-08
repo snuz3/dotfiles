@@ -24,24 +24,24 @@ theme.dir                                       = os.getenv("HOME") .. "/.config
 theme.font                                      = "JetBrains Mono Nerd Font Medium 12"
 theme.font_awesome                              = "Font Awesome 15"
 theme.fg_normal                                 = "#D8DEE9"
-theme.fg_focus                                  = "#81A1C1"
+theme.fg_focus                                  = "#F06372"
 theme.fg_urgent                                 = "#CC9393"
 
-theme.bg_normal                                 = "#424B5C"
-theme.bg_focus                                  = "#424B5C"
-theme.bg_urgent                                 = "#424B5C"
+theme.bg_normal                                 = "#1D2128"
+theme.bg_focus                                  = "#1D2128"
+theme.bg_urgent                                 = "#1D2128"
 
 theme.border_width                              = dpi(2)
-theme.border_normal                             = "#434c5e"
-theme.border_focus                              = "#81A1C1"
+theme.border_normal                             = "#5c6370"
+theme.border_focus                              = "#F06372"
 theme.border_marked                             = "#CC9393"
 
 -- theme.taglist_fg_focus                          = "#2E344080"
 
-theme.tasklist_bg_focus                         = "#424B5C"
-theme.tasklist_bg_normal                        = "#424B5C"
+theme.tasklist_bg_focus                         = "#1D2128"
+theme.tasklist_bg_normal                        = "#1D2128"
 
-theme.tasklist_fg_focus                         = "#81A1C1"
+theme.tasklist_fg_focus                         = "#F06372"
 -- theme.taglist_squares_sel                       = theme.dir .. "/icons/square_sel.png"
 -- theme.taglist_squares_unsel                     = theme.dir .. "/icons/square_unsel.png"
 theme.menu_height                               = dpi(0)
@@ -62,7 +62,7 @@ theme.layout_txt_magnifier                      = "[M]"
 theme.layout_txt_floating                       = "[|]"
 theme.tasklist_plain_task_name                  = true
 theme.tasklist_disable_icon                     = true
-theme.useless_gap                               = dpi(5)
+theme.useless_gap                               = dpi(2)
 theme.titlebar_close_button_normal              = theme.zenburn_dir.."/titlebar/close_normal.png"
 theme.titlebar_close_button_focus               = theme.zenburn_dir.."/titlebar/close_focus.png"
 theme.titlebar_minimize_button_normal           = theme.zenburn_dir.."/titlebar/minimize_normal.png"
@@ -90,7 +90,7 @@ theme.layout_txt_centerfair                     = "[centerfair]"
 
 local markup = lain.util.markup
 local gray   = "#D8DEE9"
-local highlight = "#81A1C1"
+local highlight = "#F06372"
 
 -- Textclock
 
@@ -151,21 +151,21 @@ theme.mpd = lain.widget.mpd({
 -- CPU
 local cpu = lain.widget.sysload({
     settings = function()
-        widget:set_markup(markup.font(theme.font_awesome, markup(highlight, "  ") .. markup.font(theme.font, markup(gray, load_1))))
+        widget:set_markup(markup.font(theme.font_awesome, markup("#F06372", "  ") .. markup.font(theme.font, markup(gray, load_1))))
     end
 })
 
 -- MEM
 local mem = lain.widget.mem({
     settings = function()
-        widget:set_markup(markup.font(theme.font_awesome, markup(highlight, "  ") .. markup.font(theme.font, markup(gray, mem_now.used))))
+        widget:set_markup(markup.font(theme.font_awesome, markup("#DA985C", "  ") .. markup.font(theme.font, markup(gray, mem_now.used))))
     end
 })
 
 -- Can't create more than one fs widget
 local fs = lain.widget.fs({
 	settings  = function()
-		widget:set_markup(markup.font(theme.font_awesome, markup(highlight, "  ") .. markup.font(theme.font, markup(gray, fs_now["/"].percentage .. "%"))))
+		widget:set_markup(markup.font(theme.font_awesome, markup("#8BC66F", "  ") .. markup.font(theme.font, markup(gray, fs_now["/"].percentage .. "%"))))
 		-- widget:set_markup(markup(gmc.color['teal900'], fs_now["/"].percentage .. "% "))
 	end
 })
@@ -196,7 +196,7 @@ local net = lain.widget.net({
 
         -- widget:set_markup(markup.font(theme.font, markup(gray, "  ") .. net_state .. " "))
 
-        widget:set_markup(markup.font(theme.font_awesome, markup(highlight, "  ") .. markup.font(theme.font, markup(gray, net_state ))))
+        widget:set_markup(markup.font(theme.font_awesome, markup("#44B0F5", "  ") .. markup.font(theme.font, markup(gray, net_state ))))
     end
 })
 
@@ -213,7 +213,7 @@ theme.volume = lain.widget.alsa({
         end
 		
 
-        widget:set_markup(markup.font(theme.font_awesome, markup(highlight, header) .. markup.font(theme.font, markup(gray, vlevel))))
+        widget:set_markup(markup.font(theme.font_awesome, markup("#C678DD", header) .. markup.font(theme.font, markup(gray, vlevel))))
         -- widget:set_markup(markup.font(theme.font_awesome, markup(gray, header) .. markup(highlight, vlevel)))
     end
 })
